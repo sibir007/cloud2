@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      xmlns="http://javafx.com/javafx"
+      fx:id="mainView"
+      fx:controller="io.github.sibir007.cloud2.client.user.controllers.MainViewController">
+    <!--      onMouseEntered="#onMouseEntered"-->
+    <!--      onMouseExited="#onMouseExited"-->
+
+    <!--            prefHeight="400.0" prefWidth="600.0">-->
+
+    <StackPane fx:id="views">
+        <fx:include source="manageSystemView.fxml" fx:id="manageSystemView"/>
+        <fx:include source="cloudsAccountView.fxml" fx:id="cloudsAccountView"/>
+    </StackPane>
+
+    <HBox fx:id="controls">
+        <Button fx:id="button1" text="manage system" onAction="#selectManageSystem"/>
+        <Button fx:id="button2" text="clouds" onAction="#selectClouds"/>
+    </HBox>
+
+
+</VBox>

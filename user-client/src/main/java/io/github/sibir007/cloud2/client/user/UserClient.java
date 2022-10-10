@@ -9,10 +9,13 @@ import javafx.stage.Stage;
 public class UserClient extends Application {
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root;
-        stage = fxmlLoder("fxml/stage").load();
-        root = fxmlLoder("fxml/root").load();
+        //        stage = fxmlLoder("fxml/stage").load();
+        FXMLLoader loader = new FXMLLoader(UserClient.class.getResource("fxml/mainView.fxml"));
+        Parent root = loader.load();
+//        root = fxmlLoder("fxml/mainViewRoot").load();
         Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
 
     }
 
