@@ -10,8 +10,16 @@
 <HBox xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="io.github.sibir007.cloud2.client.user.controllers.ManageSystemViewController"
+      fx:id="view"
             >
-    <TableView>
+    <id>ManageSystem</id>
+    <TableView fx:id="cloudsTable" >
+        <columns>
+            <TableColumn></TableColumn>
+            <TableColumn></TableColumn>
+            <TableColumn></TableColumn>
+            <TableColumn></TableColumn>
+        </columns>
 
     </TableView>
     <StackPane>

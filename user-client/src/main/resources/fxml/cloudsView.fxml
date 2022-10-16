@@ -11,4 +11,6 @@
       fx:id="cloudsView"
       fx:controller="io.github.sibir007.cloud2.client.user.controllers.CloudsViewController">
     <Label text="cloudsView"/>
+    <id>clouds</id>
+
 </HBox>
