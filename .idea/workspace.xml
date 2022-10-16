@@ -4,18 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="740f1ff0-1530-43ad-b60e-68e6e391c88b" name="Changes" comment="1 commet">
-      <change afterPath="$PROJECT_DIR$/user-client/src/main/java/io/github/sibir007/cloud2/client/user/controllers/CloudsViewController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-client/src/main/java/io/github/sibir007/cloud2/client/user/model/Cloud.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-client/src/main/java/io/github/sibir007/cloud2/client/user/model/CloudAccount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-client/src/main/java/io/github/sibir007/cloud2/client/user/model/CloudsSystem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-client/src/main/resources/io/github/sibir007/cloud2/client/user/fxml/cloudsView.fxml" afterDir="false" />
+    <list default="true" id="740f1ff0-1530-43ad-b60e-68e6e391c88b" name="Changes" comment="add commet">
+      <change afterPath="$PROJECT_DIR$/user-client/src/main/java/io/github/sibir007/cloud2/client/user/dependencyinjection/DependencyInjection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-client/src/main/java/io/github/sibir007/cloud2/client/user/model/Model.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-client/src/main/resources/greetings_en_GB.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-client/src/main/resources/greetings_ru_RU.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-client/src/main/java/io/github/sibir007/cloud2/client/user/UserClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-client/src/main/java/io/github/sibir007/cloud2/client/user/UserClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-client/src/main/java/io/github/sibir007/cloud2/client/user/controllers/MainViewRootController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-client/src/main/java/io/github/sibir007/cloud2/client/user/controllers/MainViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-client/src/main/java/io/github/sibir007/cloud2/client/user/controllers/ManageSystemViewRoot.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-client/src/main/java/io/github/sibir007/cloud2/client/user/controllers/ManageSystemViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-client/src/main/resources/io/github/sibir007/cloud2/client/user/fxml/mainViewRoot.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/user-client/src/main/resources/io/github/sibir007/cloud2/client/user/fxml/mainView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-client/src/main/resources/io/github/sibir007/cloud2/client/user/fxml/manageSystemViewRoot.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/user-client/src/main/resources/io/github/sibir007/cloud2/client/user/fxml/manageSystemView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-client/src/main/java/io/github/sibir007/cloud2/client/user/controllers/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-client/src/main/java/io/github/sibir007/cloud2/client/user/controllers/MainViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-client/src/main/java/io/github/sibir007/cloud2/client/user/controllers/ManageSystemViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-client/src/main/java/io/github/sibir007/cloud2/client/user/controllers/ManageSystemViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-client/src/main/java/io/github/sibir007/cloud2/client/user/controllers/SceneController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-client/src/main/java/io/github/sibir007/cloud2/client/user/controllers/StageController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-client/src/main/java/io/github/sibir007/cloud2/client/user/gui/MyScene.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-client/src/main/java/io/github/sibir007/cloud2/client/user/model/CloudsSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-client/src/main/java/io/github/sibir007/cloud2/client/user/model/CloudsSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-client/src/main/resources/io/github/sibir007/cloud2/client/user/fxml/cloudsAccountView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/user-client/src/main/resources/fxml/cloudsView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-client/src/main/resources/io/github/sibir007/cloud2/client/user/fxml/mainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/user-client/src/main/resources/fxml/mainView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-client/src/main/resources/io/github/sibir007/cloud2/client/user/fxml/manageSystemView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/user-client/src/main/resources/fxml/manageSystemView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-client/src/main/resources/io/github/sibir007/cloud2/client/user/fxml/scene.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-client/src/main/resources/io/github/sibir007/cloud2/client/user/fxml/stage.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,8 +32,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="module-info" />
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -65,25 +71,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;adopt-openjdk-11&quot;,
-    &quot;last_directory_selection&quot;: &quot;/home/dima/IdeaProjects/cloud2/user-client/src/main/java&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/dima/IdeaProjects/cloud2/user-client/src/main/resources/io.github.sibir007.cloud2.client.user&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "jdk.selected.JAVA_MODULE": "adopt-openjdk-11",
+    "last_directory_selection": "/home/dima/IdeaProjects/cloud2/user-client/src/main/java",
+    "last_opened_file_path": "/home/dima/IdeaProjects/cloud2/user-client/src/main/resources/io/github/sibir007/cloud2/client/user/bundle",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "vcs.Git"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/user-client/src/main/resources/io/github/sibir007/cloud2/client/user/bundle" />
       <recent name="$PROJECT_DIR$/user-client/src/main/resources/io.github.sibir007.cloud2.client.user" />
       <recent name="$PROJECT_DIR$/cloud/src/test/java" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/user-client/src/main/resources" />
+      <recent name="$PROJECT_DIR$/user-client/src/main/resources/fxml" />
       <recent name="$PROJECT_DIR$/user-client/src/main/resources/io/github/sibir007/cloud2/client/user/fxml" />
+      <recent name="$PROJECT_DIR$/user-client/src/main/resources/io/github/sibir007/cloud2/client/user" />
     </key>
   </component>
   <component name="RunManager">
@@ -129,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664708237086</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add commet">
+      <created>1665429212559</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1665429212559</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -146,7 +163,24 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="edit pom" />
     <MESSAGE value="1 commet" />
-    <option name="LAST_COMMIT_MESSAGE" value="1 commet" />
+    <MESSAGE value="add commet" />
+    <option name="LAST_COMMIT_MESSAGE" value="add commet" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/user-client/src/main/java/io/github/sibir007/cloud2/client/user/UserClient.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/user-client/src/main/java/io/github/sibir007/cloud2/client/user/dependencyinjection/DependencyInjection.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
