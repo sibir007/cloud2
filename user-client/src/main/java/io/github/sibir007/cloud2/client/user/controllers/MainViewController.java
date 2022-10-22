@@ -1,8 +1,11 @@
 package io.github.sibir007.cloud2.client.user.controllers;
 
 import io.github.sibir007.cloud2.client.user.dependencyinjection.DependencyInjection;
+import javafx.collections.ListChangeListener;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
@@ -13,36 +16,37 @@ import java.io.IOException;
 public class MainViewController {
 
     @FXML
+    private Pane views;
+    @FXML
+    private HBox manageCloudsTableCloudView;
+    @FXML
+    private HBox cloudsView;
+    @FXML
     private HBox viewsControls;
     @FXML
-    private Pane views;
-    private Pane visibleView;
+    private ManageCloudsTableViewController manageCloudsTableViewController;
+    @FXML
+    private CloudsViewController cloudsViewController;
 
     public void initialize() throws IOException {
-        visibleView = addView("/fxml/manageSystemView.fxml");
-        visibleView.setVisible(true);
-        addView("/fxml/cloudsView.fxml");
-
+//        manageCloudsTableViewController.initialize();
+//        cloudsViewController.initialize();
+        initControls();
+        cloudsView.setVisible(true);
     }
 
-    private Pane addView(String location) throws IOException {
-        Parent view = DependencyInjection.load(location);
-        String buttonText = view.getId();
-        Button viewButton =  new Button();
-        viewButton.setOnAction(event -> {
-            visibleView.setVisible(false);
-            //TODO разобраться с типом
-            visibleView = (Pane) view;
-            visibleView.setVisible(true);
-        });
-        viewButton.setText(buttonText);
-        views.getChildren().add(view);
-        viewsControls.getChildren().add(viewButton);
-        view.setVisible(false);
-        return (Pane) view;
+    private void initControls() {
+        ObservableList<Node> nodes = views.getChildren();
+        for (Node node: nodes){
+            Button button = new Button();
+            button.setText(node.getId());
+            button.setOnAction(event -> {
+                views.getChildren().stream().forEach(node1 -> node1.setVisible(false));
+                node.setVisible(true);
+            }
+            );
+            viewsControls.getChildren().add(button);
+        }
     }
 
-
-    public void manageMainView(ActionEvent actionEvent) {
-    }
 }

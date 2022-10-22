@@ -11,7 +11,6 @@
       <change afterPath="$PROJECT_DIR$/user-client/src/main/resources/fxml/manageCloudView.fxml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/user-client/src/main/resources/fxml/manageCloudsTableCloudView.fxml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/user-client/src/main/resources/fxml/manageCloudsTableView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-client/src/main/java/io/github/sibir007/cloud2/client/user/UserClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-client/src/main/java/io/github/sibir007/cloud2/client/user/UserClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-client/src/main/java/io/github/sibir007/cloud2/client/user/controllers/CloudsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-client/src/main/java/io/github/sibir007/cloud2/client/user/controllers/CloudsViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-client/src/main/java/io/github/sibir007/cloud2/client/user/controllers/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-client/src/main/java/io/github/sibir007/cloud2/client/user/controllers/MainViewController.java" afterDir="false" />
@@ -159,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665947218521</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="commit">
+      <created>1666470216526</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1666470216526</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

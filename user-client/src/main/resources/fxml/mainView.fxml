@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
+
 <?import javafx.scene.layout.*?>
 
 <VBox xmlns:fx="http://javafx.com/fxml"
       xmlns="http://javafx.com/javafx"
       fx:id="mainView"
-      fx:controller="io.github.sibir007.cloud2.client.user.controllers.MainViewController">
+      fx:controller="io.github.sibir007.cloud2.client.user.controllers.MainViewController"
+>
     <!--      onMouseEntered="#onMouseEntered"-->
     <!--      onMouseExited="#onMouseExited"-->
 
@@ -17,9 +15,9 @@
     <id>MainView</id>
     <BorderPane fx:id="layout">
         <left>
-            <HBox fx:id="mainViewControls">
-                <Button fx:id="manageMainViewButton" text="manageView" onAction="#manageMainView"/>
-            </HBox>
+<!--            <HBox fx:id="mainViewControls">-->
+<!--                <Button fx:id="manageMainViewButton" text="manageView" onAction="#manageMainView"/>-->
+<!--            </HBox>-->
         </left>
         <top></top>
         <right></right>
@@ -31,8 +29,8 @@
         </bottom>
         <center>
             <Pane fx:id="views">
-                <!--            <Pane fx:id="manageSystemView"/>-->
-                <!--            <Pane fx:id="cloudsAccountView"/>-->
+                <fx:include source="manageCloudsTableCloudView.fxml" fx:id="manageCloudsTableCloudView"/>
+                <fx:include source="cloudsView.fxml" fx:id="cloudsView"/>
             </Pane>
         </center>
     </BorderPane>
