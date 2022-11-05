@@ -1,6 +1,7 @@
 package io.github.sibir007.cloud2.client.user.dependencyinjection;
 
-import io.github.sibir007.cloud2.client.user.controllers.ManageCloudsTableViewController;
+import io.github.sibir007.cloud2.client.user.controllers.ManageCloudsViewController;
+//import io.github.sibir007.cloud2.client.user.controllers.ManageCloudsTableViewController;
 import io.github.sibir007.cloud2.client.user.model.Model;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.JavaFXBuilderFactory;
@@ -56,7 +57,7 @@ public class DependencyInjection {
     }
 
     static {
-        addInjectionMethod(ManageCloudsTableViewController.class, () -> new ManageCloudsTableViewController(Model.getModel()));
+        addInjectionMethod(ManageCloudsViewController.class, () -> new ManageCloudsViewController(Model.getModel()));
 //        injectionMethods.put();
     }
 

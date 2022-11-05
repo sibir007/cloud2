@@ -5,6 +5,7 @@ import io.github.sibir007.cloud2.client.user.model.CloudsSystem;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.HBox;
@@ -12,6 +13,12 @@ import javafx.scene.layout.VBox;
 import javafx.util.Callback;
 
 public class ManageCloudsTableViewController {
+    @FXML
+    private Button newCloudButton;
+    @FXML
+    private Button editCloudButton;
+    @FXML
+    private Button removeCloudButton;
     @FXML
     private VBox manageCloudsView;
     @FXML
@@ -24,6 +31,7 @@ public class ManageCloudsTableViewController {
     public ManageCloudsTableViewController(CloudsSystem model){
         this.model = model;
     }
+
 
 
     public void initialize(){
@@ -51,5 +59,4 @@ public class ManageCloudsTableViewController {
         });
         this.cloudsTable.getColumns().addAll(protocolTableColumn, hostTableColumn, portTableColumn);
     }
-
 }

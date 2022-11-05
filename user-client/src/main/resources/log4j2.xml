@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+        <RollingFileAppender fileName="user-client/logs/myappRollingFileAppender.log" filePattern="user-client/logs/myappRolli.log">
+
+        </RollingFileAppender>
+        <File name="MyFile1" fileName="user-client/logs/myapp-${date:yyyy-MM-ddHHmmssSSS}.log" append="false">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+    </Appenders>
+    <Loggers>
+        <Root level="trace">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="MyFile1"/>
+        </Root>
+    </Loggers>
+</Configuration>

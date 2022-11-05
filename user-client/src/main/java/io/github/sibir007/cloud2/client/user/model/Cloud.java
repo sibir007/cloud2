@@ -3,7 +3,6 @@ package io.github.sibir007.cloud2.client.user.model;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.ObjectPropertyBase;
 import javafx.beans.property.Property;
-import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -12,7 +11,7 @@ import java.net.URL;
 
 public class Cloud {
 
-    private final ObjectProperty<URL> urlProperty = new ObjectPropertyBase<URL>() {
+    private final ObjectProperty<URL> urlProperty = new ObjectPropertyBase<>() {
         @Override
         public Object getBean() {
             return Cloud.this;
@@ -20,6 +19,10 @@ public class Cloud {
         @Override
         public String getName() {
             return "url";
+        }
+
+        @Override
+        protected void invalidated() {
         }
     };
     private final ObservableList<CloudAccount> cloudAccounts = FXCollections.observableArrayList();
@@ -32,21 +35,21 @@ public class Cloud {
     public URL getUrlProperty() {
         return urlProperty.getValue();
     }
+    public void setUrlProperty(URL urlProperty) {
+        this.urlProperty.setValue(urlProperty);
+    }
 
     public Property<URL> urlPropertyProperty() {
         return urlProperty;
     }
 
-    public void setUrlProperty(URL urlProperty) {
-        this.urlProperty.setValue(urlProperty);
-    }
 
     public ObservableList<CloudAccount> getCloudAccounts() {
         return cloudAccounts;
     }
 
-    public boolean addCloudAccount(String login, String password) {
-        return cloudAccounts.add(new CloudAccount(this, login, password));
+    public boolean addCloudAccount(String login, String password, String email) {
+        return cloudAccounts.add(new CloudAccount(this, login, password, email));
     }
 
     public CloudAccount removeCloudAccount(int index) {

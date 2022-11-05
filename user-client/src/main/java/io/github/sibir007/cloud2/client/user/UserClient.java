@@ -5,44 +5,29 @@ import io.github.sibir007.cloud2.client.user.model.Cloud;
 import io.github.sibir007.cloud2.client.user.model.CloudsSystem;
 import io.github.sibir007.cloud2.client.user.model.Model;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
+import javafx.application.HostServices;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.net.MalformedURLException;
 
 public class UserClient extends Application {
+    private static Logger logger = LogManager.getLogger();
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = DependencyInjection.load("/fxml/mainView.fxml");
         Scene scene = new Scene(root);
         stage.setScene(scene);
-        initModel();
         stage.show();
+        logger.debug("debug logger");
+        logger.error("error logger");
+        logger.fatal("fatal logger");
+        logger.warn("warn logger");
+        logger.info("info logger");
+        logger.trace("trace logger");
 
     }
-
-    private void initModel() throws MalformedURLException {
-        CloudsSystem cloudsSystem = Model.getModel();
-        Cloud cloud = cloudsSystem.addCloud("http", "yandex.ru", 80,"index.html");
-        cloud.addCloudAccount("dima", "password");
-        cloud.addCloudAccount("vova", "password");
-        cloud.addCloudAccount("sasha", "password");
-        cloud = cloudsSystem.addCloud("http", "google", 80, "index.html");
-        cloud.addCloudAccount("dima", "password");
-        cloud.addCloudAccount("vova", "password");
-        cloud.addCloudAccount("sasha", "password");
-        cloud = cloudsSystem.addCloud("http", "yandex.ru", 80, "index.html");
-        cloud.addCloudAccount("dima", "password");
-        cloud.addCloudAccount("vova", "password");
-        cloud.addCloudAccount("sasha", "password");
-        cloud = cloudsSystem.addCloud("http", "yandex.ru", 80, "index.html");
-        cloud.addCloudAccount("dima", "password");
-        cloud.addCloudAccount("vova", "password");
-        cloud.addCloudAccount("sasha", "password");
-    }
-
-
 
 }

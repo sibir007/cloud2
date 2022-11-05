@@ -10,6 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 
@@ -18,21 +19,23 @@ public class MainViewController {
     @FXML
     private Pane views;
     @FXML
-    private HBox manageCloudsTableCloudView;
+    private VBox manageCloudsTableCloudView;
     @FXML
     private HBox cloudsView;
     @FXML
     private HBox viewsControls;
-    @FXML
-    private ManageCloudsTableViewController manageCloudsTableViewController;
+//    @FXML
+//    private ManageCloudsTableViewController manageCloudsTableViewController;
     @FXML
     private CloudsViewController cloudsViewController;
 
     public void initialize() throws IOException {
+        System.out.println(cloudsViewController);
 //        manageCloudsTableViewController.initialize();
 //        cloudsViewController.initialize();
         initControls();
-        cloudsView.setVisible(true);
+//        manageCloudsTableCloudView.setVisible(false);
+//        cloudsView.setVisible(true);
     }
 
     private void initControls() {
@@ -46,7 +49,11 @@ public class MainViewController {
             }
             );
             viewsControls.getChildren().add(button);
+//            node.getProperties().putIfAbsent("control", node);
         }
+        views.getChildren().stream().forEach(node -> node.setVisible(false));
+        manageCloudsTableCloudView.setVisible(true);
+
     }
 
 }

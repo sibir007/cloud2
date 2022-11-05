@@ -6,12 +6,37 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<HBox xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="io.github.sibir007.cloud2.client.user.controllers.ManageCloudsTableCloudViewController"
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="io.github.sibir007.cloud2.client.user.controllers.ManageCloudsViewController"
 >
-    <fx:include fx:id="manageCloudsTableView" source="manageCloudsTableView.fxml"/>
-    <fx:include fx:id="manageCloudView" source="manageCloudView.fxml"/>
+    <HBox>
+        <TableView fx:id="cloudsTable">
+            <!--        <VBox.vgrow></VBox.vgrow>-->
+
+        </TableView>
+        <VBox fx:id="cloudView">
+            <VBox>
+                <HBox><Label text="host:"/><Label fx:id="hostLabel"/></HBox>
+                <HBox><Label text="port:"/><Label fx:id="portLabel"/></HBox>
+                <HBox><Label text="protocol:"/><Label fx:id="protocolLabel"/></HBox>
+            </VBox>
+            <TableView fx:id="cloudAccountsTable">
+
+            </TableView>
+        </VBox>
+    </HBox>
 
 
-</HBox>
+    <HBox fx:id="controls">
+        <!--        <VBox.vg-->
+        <Button fx:id="addCloudButton" text="addCloud"/>
+        <Button fx:id="editCloudButton" text="editCloud"/>
+        <Button fx:id="dellCloudButton" text="dellCloud"/>
+        <Button fx:id="addAccountButton" text="addAccount"/>
+        <Button fx:id="dellAccountButton" text="dellAccount"/>
+        <Button fx:id="editAccountButton" text="editAccount"/>
+    </HBox>
+
+
+</VBox>
