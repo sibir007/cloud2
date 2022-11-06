@@ -1,5 +1,6 @@
 package io.github.sibir007.cloud2.client.user.dependencyinjection;
 
+import io.github.sibir007.cloud2.client.user.controllers.AddCloudViewController;
 import io.github.sibir007.cloud2.client.user.controllers.ManageCloudsViewController;
 //import io.github.sibir007.cloud2.client.user.controllers.ManageCloudsTableViewController;
 import io.github.sibir007.cloud2.client.user.model.Model;
@@ -19,8 +20,12 @@ public class DependencyInjection {
     private static final Map<Class<?>, Callable<?>> injectionMethods = new HashMap<>();
 
 
-    public static Parent load(String location) throws IOException {
-        return getLoader(location).load();
+    public static Parent load(String location){
+        try {
+            return getLoader(location).load();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
     
     public static FXMLLoader getLoader(String location){
@@ -59,6 +64,7 @@ public class DependencyInjection {
     static {
         addInjectionMethod(ManageCloudsViewController.class, () -> new ManageCloudsViewController(Model.getModel()));
 //        injectionMethods.put();
+        addInjectionMethod(AddCloudViewController.class, () -> new AddCloudViewController(Model.getModel()));
     }
 
 }

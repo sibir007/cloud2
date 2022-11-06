@@ -29,7 +29,7 @@
         </bottom>
         <center>
             <Pane fx:id="views">
-                <fx:include source="manageCloudsTableCloudView.fxml" fx:id="manageCloudsTableCloudView"/>
+                <fx:include source="manageCloudsView.fxml" fx:id="manageCloudsTableCloudView"/>
                 <fx:include source="cloudsView.fxml" fx:id="cloudsView"/>
             </Pane>
         </center>

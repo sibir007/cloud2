@@ -1,15 +1,20 @@
 package io.github.sibir007.cloud2.client.user.controllers;
 
+import io.github.sibir007.cloud2.client.user.dependencyinjection.DependencyInjection;
 import io.github.sibir007.cloud2.client.user.model.Cloud;
 import io.github.sibir007.cloud2.client.user.model.CloudAccount;
 import io.github.sibir007.cloud2.client.user.model.CloudsSystem;
 import javafx.beans.property.ReadOnlyObjectWrapper;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 public class ManageCloudsViewController {
     //manageCloudsTableView
@@ -42,19 +47,35 @@ public class ManageCloudsViewController {
     @FXML
     private TableView<CloudAccount> cloudAccountsTable;
 
-
+    private Stage addCloudWindow;
 
 
     private final CloudsSystem model;
 
     public ManageCloudsViewController(CloudsSystem cloudsSystem) {
         model = cloudsSystem;
+
+
     }
 
     public void initialize() {
         initCloudsTable();
         initCloudView();
         initButtons();
+        initAddCloudWindow();
+    }
+
+    private void initAddCloudWindow() {
+        addCloudWindow = new Stage();
+        addCloudWindow.setTitle("Add Cloud");
+        addCloudWindow.setScene(new Scene(
+                DependencyInjection.load("/fxml/addCloudView.fxml")
+        ));
+        addCloudWindow.setResizable(false);
+        addCloudWindow.initModality(Modality.APPLICATION_MODAL);
+        addCloudWindow.setFullScreen(false);
+        addCloudWindow.setAlwaysOnTop(true);
+
     }
 
     private void initButtons() {
@@ -111,4 +132,22 @@ public class ManageCloudsViewController {
         cloudAccountsTable.getColumns().addAll(loginTableColumn, passwordTableColumn, emailTableColumn);
     }
 
+    public void addCLoudButtonAction(ActionEvent actionEvent) {
+        addCloudWindow.showAndWait();
+    }
+
+    public void editCloudButtonAction(ActionEvent actionEvent) {
+    }
+
+    public void dellCloudButtonAction(ActionEvent actionEvent) {
+    }
+
+    public void addAccountButtonAction(ActionEvent actionEvent) {
+    }
+
+    public void dellAccountButtonAction(ActionEvent actionEvent) {
+    }
+
+    public void editAccountButtonAction(ActionEvent actionEvent) {
+    }
 }
