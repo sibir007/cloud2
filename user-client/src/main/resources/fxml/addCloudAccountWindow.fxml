@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.stage.Stage?>
+
+<Stage xmlns="http://javafx.com/javafx"
+              xmlns:fx="http://javafx.com/fxml"
+              fx:controller="io.github.sibir007.cloud2.client.user.controllers.AddCloudAccountWindowController"
+       title="Add Cloud Account"
+       resizable="false"
+       fullScreen="false"
+       alwaysOnTop="true"
+       fx:id="addCloudAccountWindow"
+>
+    <scene>
+        <Scene>
+            <root>
+                <VBox>
+                    <VBox>
+                        <HBox>
+                            <Label text="host:"/><Label fx:id="hostLabel"/>
+                        </HBox>
+                        <HBox>
+                            <Label text="login:"/><TextField fx:id="loginTextField"/>
+                        </HBox>
+                        <HBox>
+                            <Label text="password:"/><TextField fx:id="passwordTextField"/>
+                        </HBox>
+                        <HBox>
+                            <Label text="email:"/><TextField fx:id="emailTextField"/>
+                        </HBox>
+                    </VBox>
+                    <HBox fx:id="controls">
+                        <!--        <VBox.vg-->
+                        <Button fx:id="addCloudAccountButton" text="addCloud" onAction="#addCLoudAccountButtonAction"/>
+                        <Button fx:id="chancelButton" text="chancel" onAction="#chancelButtonAction"/>
+                    </HBox>
+
+                </VBox>
+            </root>
+
+        </Scene>
+    </scene>
+
+
+
+</Stage>

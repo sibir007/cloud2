@@ -10,12 +10,16 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class Cloud {
+    public static Cloud createFtpCloud(String host) {
+        return new Cloud("ftp", host, 21, "/");
+    }
 
     private final ObjectProperty<URL> urlProperty = new ObjectPropertyBase<>() {
         @Override
         public Object getBean() {
             return Cloud.this;
         }
+
         @Override
         public String getName() {
             return "url";
@@ -27,14 +31,21 @@ public class Cloud {
     };
     private final ObservableList<CloudAccount> cloudAccounts = FXCollections.observableArrayList();
 
-    public Cloud(String protocol, String host, int port, String file) throws MalformedURLException {
-        URL url = new URL(protocol, host, port, file);
+    //TODO обработать исключение
+    public Cloud(String protocol, String host, int port, String file) {
+        URL url = null;
+        try {
+            url = new URL(protocol, host, port, file);
+        } catch (MalformedURLException e) {
+            throw new RuntimeException(e);
+        }
         this.urlProperty.setValue(url);
     }
 
     public URL getUrlProperty() {
         return urlProperty.getValue();
     }
+
     public void setUrlProperty(URL urlProperty) {
         this.urlProperty.setValue(urlProperty);
     }
@@ -72,7 +83,7 @@ public class Cloud {
         return urlProperty.getValue().getHost();
     }
 
-    public int getPort(){
+    public int getPort() {
         return urlProperty.getValue().getPort();
     }
 }

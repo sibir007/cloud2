@@ -4,20 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="740f1ff0-1530-43ad-b60e-68e6e391c88b" name="Changes" comment="commit">
-      <change afterPath="$PROJECT_DIR$/user-client/src/main/java/io/github/sibir007/cloud2/client/user/controllers/AddCloudViewController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-client/src/main/resources/fxml/addCloudView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-client/src/main/resources/fxml/addCloudWindov.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="740f1ff0-1530-43ad-b60e-68e6e391c88b" name="Changes" comment="add addCloudWindow">
+      <change afterPath="$PROJECT_DIR$/user-client/src/main/java/io/github/sibir007/cloud2/client/user/controllers/AddCloudAccountWindowController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-client/src/main/java/io/github/sibir007/cloud2/client/user/controllers/AddCloudWindowController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-client/src/main/java/io/github/sibir007/cloud2/client/user/util/SceneFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-client/src/main/java/io/github/sibir007/cloud2/client/user/util/StageFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-client/src/main/resources/fxml/addCloudAccountWindow.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-client/src/main/resources/fxml/dellCloudConformationAlert.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-client/src/main/java/io/github/sibir007/cloud2/client/user/controllers/ManageCloudViewController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-client/src/main/java/io/github/sibir007/cloud2/client/user/controllers/ManageCloudsTableViewController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-client/src/main/java/io/github/sibir007/cloud2/client/user/UserClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-client/src/main/java/io/github/sibir007/cloud2/client/user/UserClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-client/src/main/java/io/github/sibir007/cloud2/client/user/controllers/ManageCloudsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-client/src/main/java/io/github/sibir007/cloud2/client/user/controllers/ManageCloudsViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-client/src/main/java/io/github/sibir007/cloud2/client/user/dependencyinjection/DependencyInjection.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-client/src/main/java/io/github/sibir007/cloud2/client/user/dependencyinjection/DependencyInjection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-client/src/main/resources/fxml/mainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/user-client/src/main/resources/fxml/mainView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-client/src/main/resources/fxml/manageCloudsTableCloudView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/user-client/src/main/resources/fxml/manageCloudsView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-client/src/main/java/io/github/sibir007/cloud2/client/user/model/Cloud.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-client/src/main/java/io/github/sibir007/cloud2/client/user/model/Cloud.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-client/src/main/java/io/github/sibir007/cloud2/client/user/model/CloudsSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-client/src/main/java/io/github/sibir007/cloud2/client/user/model/CloudsSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-client/src/main/java/io/github/sibir007/cloud2/client/user/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-client/src/main/java/io/github/sibir007/cloud2/client/user/model/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-client/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-client/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-client/src/main/resources/fxml/addCloudWindov.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/user-client/src/main/resources/fxml/addCloudWindow.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-client/src/main/resources/fxml/manageCloudsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/user-client/src/main/resources/fxml/manageCloudsView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,12 +31,17 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="module-info" />
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="fxmlLoderTest" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GithubDefaultAccount">
@@ -105,6 +113,9 @@
       <recent name="$PROJECT_DIR$/user-client/src/main/resources/io/github/sibir007/cloud2/client/user/fxml" />
       <recent name="$PROJECT_DIR$/user-client/src/main/resources/io/github/sibir007/cloud2/client/user" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="io.github.sibir007.cloud2.client.user.controllers" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="UserClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -122,6 +133,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.UserClient" />
         <item itemvalue="Application.UserClient" />
       </list>
     </recent_temporary>
@@ -191,7 +203,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667684842778</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="add addCloudWindow">
+      <created>1667748922317</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1667748922317</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -210,7 +229,8 @@
     <MESSAGE value="1 commet" />
     <MESSAGE value="add commet" />
     <MESSAGE value="commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit" />
+    <MESSAGE value="add addCloudWindow" />
+    <option name="LAST_COMMIT_MESSAGE" value="add addCloudWindow" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

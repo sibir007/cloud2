@@ -1,6 +1,7 @@
 package io.github.sibir007.cloud2.client.user.dependencyinjection;
 
 import io.github.sibir007.cloud2.client.user.controllers.AddCloudViewController;
+import io.github.sibir007.cloud2.client.user.controllers.AddCloudWindowController;
 import io.github.sibir007.cloud2.client.user.controllers.ManageCloudsViewController;
 //import io.github.sibir007.cloud2.client.user.controllers.ManageCloudsTableViewController;
 import io.github.sibir007.cloud2.client.user.model.Model;
@@ -20,7 +21,7 @@ public class DependencyInjection {
     private static final Map<Class<?>, Callable<?>> injectionMethods = new HashMap<>();
 
 
-    public static Parent load(String location){
+    public static Object load(String location){
         try {
             return getLoader(location).load();
         } catch (IOException e) {
@@ -65,6 +66,7 @@ public class DependencyInjection {
         addInjectionMethod(ManageCloudsViewController.class, () -> new ManageCloudsViewController(Model.getModel()));
 //        injectionMethods.put();
         addInjectionMethod(AddCloudViewController.class, () -> new AddCloudViewController(Model.getModel()));
+        addInjectionMethod(AddCloudWindowController.class, () -> new AddCloudWindowController(Model.getModel()));
     }
 
 }

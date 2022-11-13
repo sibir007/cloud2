@@ -17,7 +17,7 @@ public class UserClient extends Application {
     private static Logger logger = LogManager.getLogger();
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = DependencyInjection.load("/fxml/mainView.fxml");
+        Parent root = (Parent) DependencyInjection.load("/fxml/mainView.fxml");
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();

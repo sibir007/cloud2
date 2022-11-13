@@ -4,5 +4,6 @@ module user.client {
     requires org.apache.logging.log4j;
 
     opens io.github.sibir007.cloud2.client.user.controllers to javafx.fxml;
+//    opens io.github.sibir007.cloud2.client.user.util to javafx.fxml;
     exports io.github.sibir007.cloud2.client.user;
 }

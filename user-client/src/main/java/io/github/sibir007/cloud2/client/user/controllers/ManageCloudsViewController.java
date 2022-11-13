@@ -5,16 +5,18 @@ import io.github.sibir007.cloud2.client.user.model.Cloud;
 import io.github.sibir007.cloud2.client.user.model.CloudAccount;
 import io.github.sibir007.cloud2.client.user.model.CloudsSystem;
 import javafx.beans.property.ReadOnlyObjectWrapper;
+import javafx.collections.ListChangeListener;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+
+import java.util.List;
+import java.util.Optional;
+
+import static javafx.scene.control.ButtonType.OK;
 
 public class ManageCloudsViewController {
     //manageCloudsTableView
@@ -49,6 +51,9 @@ public class ManageCloudsViewController {
 
     private Stage addCloudWindow;
 
+    @FXML
+    private Alert dellCloudConformationAlert;
+
 
     private final CloudsSystem model;
 
@@ -63,20 +68,31 @@ public class ManageCloudsViewController {
         initCloudView();
         initButtons();
         initAddCloudWindow();
+        initDellCloudConformationAlert();
+    }
+
+    private void initDellCloudConformationAlert() {
+        dellCloudConformationAlert = new Alert(Alert.AlertType.CONFIRMATION, "a you shou, delete cloud?", OK, ButtonType.CANCEL);
+//        dellCloudConformationAlert = (Alert) DependencyInjection.load("/fxml/dellCloudConformationAlert.fxml");
     }
 
     private void initAddCloudWindow() {
-        addCloudWindow = new Stage();
-        addCloudWindow.setTitle("Add Cloud");
-        addCloudWindow.setScene(new Scene(
-                DependencyInjection.load("/fxml/addCloudView.fxml")
-        ));
-        addCloudWindow.setResizable(false);
+        addCloudWindow = (Stage) DependencyInjection.load("/fxml/addCloudWindow.fxml");
         addCloudWindow.initModality(Modality.APPLICATION_MODAL);
-        addCloudWindow.setFullScreen(false);
-        addCloudWindow.setAlwaysOnTop(true);
-
     }
+
+//    private void initAddCloudWindow() {
+//        addCloudWindow = new Stage();
+//        addCloudWindow.setTitle("Add Cloud");
+//        addCloudWindow.setScene(new Scene(
+//                DependencyInjection.load("/fxml/addCloudView.fxml")
+//        ));
+//        addCloudWindow.setResizable(false);
+//        addCloudWindow.initModality(Modality.APPLICATION_MODAL);
+//        addCloudWindow.setFullScreen(false);
+//        addCloudWindow.setAlwaysOnTop(true);
+//
+//    }
 
     private void initButtons() {
         editCloudButton.disableProperty().bind(
@@ -107,6 +123,18 @@ public class ManageCloudsViewController {
         TableColumn<Cloud, String> portTableColumn = new TableColumn<>("port");
         portTableColumn.setCellValueFactory(param -> new ReadOnlyObjectWrapper<>(String.valueOf(param.getValue().getPort())));
         this.cloudsTable.getColumns().addAll(protocolTableColumn, hostTableColumn, portTableColumn);
+        this.cloudsTable.getItems().addListener(new ListChangeListener<Cloud>() {
+            @Override
+            public void onChanged(Change<? extends Cloud> c) {
+                if (c.next() & c.wasAdded()) {
+                    List<? extends Cloud> clouds = c.getAddedSubList();
+                    clouds.forEach(cloud -> {
+                        ManageCloudsViewController.this.cloudsTable.getSelectionModel().select(cloud);
+                    });
+
+                }
+            }
+        });
 
     }
 
@@ -117,10 +145,17 @@ public class ManageCloudsViewController {
 
         cloudsTable.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldVal, newVal) -> {
-                    hostLabel.setText(newVal.getHost());
-                    portLabel.setText(String.valueOf(newVal.getPort()));
-                    protocolLabel.setText(newVal.getProtocol());
-                    cloudAccountsTable.setItems(newVal.getCloudAccounts());
+                    if (newVal != null) {
+                        hostLabel.setText(newVal.getHost());
+                        portLabel.setText(String.valueOf(newVal.getPort()));
+                        protocolLabel.setText(newVal.getProtocol());
+                        cloudAccountsTable.setItems(newVal.getCloudAccounts());
+                    } else {
+                        hostLabel.setText("");
+                        portLabel.setText("");
+                        protocolLabel.setText("");
+                        cloudAccountsTable.setItems(null);
+                    }
                 }
         );
         TableColumn<CloudAccount, String> loginTableColumn = new TableColumn<>("login");
@@ -140,7 +175,15 @@ public class ManageCloudsViewController {
     }
 
     public void dellCloudButtonAction(ActionEvent actionEvent) {
+        dellCloudConformationAlert
+                .showAndWait()
+                .filter(response -> response == ButtonType.OK)
+                .ifPresent(response -> {
+                    Cloud cloud = cloudsTable.getSelectionModel().getSelectedItem();
+                    model.removeCloud(cloud);
+                });
     }
+
 
     public void addAccountButtonAction(ActionEvent actionEvent) {
     }

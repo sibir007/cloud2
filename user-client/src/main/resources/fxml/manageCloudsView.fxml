@@ -33,9 +33,9 @@
         <Button fx:id="addCloudButton" text="addCloud" onAction="#addCLoudButtonAction"/>
         <Button fx:id="editCloudButton" text="editCloud" onAction="#editCloudButtonAction"/>
         <Button fx:id="dellCloudButton" text="dellCloud" onAction="#dellCloudButtonAction"/>
+        <Button fx:id="editAccountButton" text="editAccount" onAction="#editAccountButtonAction"/>
         <Button fx:id="addAccountButton" text="addAccount" onAction="#addAccountButtonAction"/>
         <Button fx:id="dellAccountButton" text="dellAccount" onAction="#dellAccountButtonAction"/>
-        <Button fx:id="editAccountButton" text="editAccount" onAction="#editAccountButtonAction"/>
     </HBox>
 
 
