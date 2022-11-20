@@ -9,14 +9,17 @@
 <?import javafx.stage.Stage?>
 <?import io.github.sibir007.cloud2.client.user.util.SceneFactory?>
 <?import io.github.sibir007.cloud2.client.user.util.StageFactory?>
-<Stage xmlns="http://javafx.com/javafx"
-              xmlns:fx="http://javafx.com/fxml"
-              fx:controller="io.github.sibir007.cloud2.client.user.controllers.AddCloudWindowController"
+<Stage xmlns:fx="http://javafx.com/fxml"
+       xmlns="http://javafx.com/javafx"
+       fx:controller="io.github.sibir007.cloud2.client.user.controllers.AddCloudWindowController"
        title="Add Cloud"
        resizable="false"
        fullScreen="false"
-       alwaysOnTop="true"
        fx:id="addCloudWindow"
+       onShowing="#onShowing"
+
+
+
 >
     <scene>
         <Scene>

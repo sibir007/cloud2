@@ -1,13 +1,17 @@
 package io.github.sibir007.cloud2.client.user.controllers;
 
 import io.github.sibir007.cloud2.client.user.model.CloudsSystem;
-import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class AddCloudWindowController {
+    private static Logger logger = LogManager.getLogger();
+
     @FXML
     private Stage addCloudWindow;
     @FXML
@@ -20,18 +24,13 @@ public class AddCloudWindowController {
     public AddCloudWindowController(CloudsSystem cloudsSystem){
         model = cloudsSystem;
     }
-    public void initialize(){
-        addCloudWindow.setOnShowing(event -> {
-            hostTextField.requestFocus();
-        });
-    }
+
 
     public void addCLoudButtonAction(ActionEvent actionEvent) {
-        model.addCloud(hostTextField.getText());
+        logger.trace(Thread.currentThread().getName());
+        model.addFtpCloud(hostTextField.getText());
         hostTextField.clear();
         hostTextField.getScene().getWindow().hide();
-
-
     }
 
     public void chancelButtonAction(ActionEvent actionEvent) {
@@ -39,4 +38,7 @@ public class AddCloudWindowController {
     }
 
 
+    public void onShowing(WindowEvent windowEvent) {
+        hostTextField.requestFocus();
+    }
 }

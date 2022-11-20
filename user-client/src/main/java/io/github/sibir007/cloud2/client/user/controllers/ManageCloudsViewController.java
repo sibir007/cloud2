@@ -4,21 +4,31 @@ import io.github.sibir007.cloud2.client.user.dependencyinjection.DependencyInjec
 import io.github.sibir007.cloud2.client.user.model.Cloud;
 import io.github.sibir007.cloud2.client.user.model.CloudAccount;
 import io.github.sibir007.cloud2.client.user.model.CloudsSystem;
+import javafx.beans.InvalidationListener;
+import javafx.beans.Observable;
 import javafx.beans.property.ReadOnlyObjectWrapper;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.ListChangeListener;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
+import java.io.IOException;
 import java.util.List;
-import java.util.Optional;
 
 import static javafx.scene.control.ButtonType.OK;
 
 public class ManageCloudsViewController {
+    private static Logger logger = LogManager.getLogger();
     //manageCloudsTableView
     @FXML
     private VBox manageCloudsTableView;
@@ -50,6 +60,8 @@ public class ManageCloudsViewController {
     private TableView<CloudAccount> cloudAccountsTable;
 
     private Stage addCloudWindow;
+    private Stage editCloudWindow;
+    private EditCloudWindowController editCloudWindowController;
 
     @FXML
     private Alert dellCloudConformationAlert;
@@ -69,30 +81,33 @@ public class ManageCloudsViewController {
         initButtons();
         initAddCloudWindow();
         initDellCloudConformationAlert();
+        initEditCloudWindow();
     }
+
+    private void initEditCloudWindow() {
+        FXMLLoader loader = DependencyInjection.getLoader("/fxml/manageCloudsView/editCloudWindow.fxml");
+        try {
+            editCloudWindow = (Stage) loader.load();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        editCloudWindowController = loader.getController();
+        editCloudWindow.initModality(Modality.APPLICATION_MODAL);
+
+    }
+
 
     private void initDellCloudConformationAlert() {
         dellCloudConformationAlert = new Alert(Alert.AlertType.CONFIRMATION, "a you shou, delete cloud?", OK, ButtonType.CANCEL);
-//        dellCloudConformationAlert = (Alert) DependencyInjection.load("/fxml/dellCloudConformationAlert.fxml");
+        dellCloudConformationAlert.initModality(Modality.APPLICATION_MODAL);
     }
 
     private void initAddCloudWindow() {
-        addCloudWindow = (Stage) DependencyInjection.load("/fxml/addCloudWindow.fxml");
-        addCloudWindow.initModality(Modality.APPLICATION_MODAL);
+        addCloudWindow = (Stage) DependencyInjection.load("/fxml/manageCloudsView/addCloudWindow.fxml");
+//        addCloudWindow.initModality(Modality.APPLICATION_MODAL);
     }
 
-//    private void initAddCloudWindow() {
-//        addCloudWindow = new Stage();
-//        addCloudWindow.setTitle("Add Cloud");
-//        addCloudWindow.setScene(new Scene(
-//                DependencyInjection.load("/fxml/addCloudView.fxml")
-//        ));
-//        addCloudWindow.setResizable(false);
-//        addCloudWindow.initModality(Modality.APPLICATION_MODAL);
-//        addCloudWindow.setFullScreen(false);
-//        addCloudWindow.setAlwaysOnTop(true);
-//
-//    }
+
 
     private void initButtons() {
         editCloudButton.disableProperty().bind(
@@ -168,13 +183,20 @@ public class ManageCloudsViewController {
     }
 
     public void addCLoudButtonAction(ActionEvent actionEvent) {
-        addCloudWindow.showAndWait();
+        logger.trace(Thread.currentThread().getName());
+        addCloudWindow.show();
+        logger.trace(Thread.currentThread().getName());
+
     }
 
     public void editCloudButtonAction(ActionEvent actionEvent) {
+        Cloud cloud = cloudsTable.getSelectionModel().getSelectedItem();
+        editCloudWindowController.setCurrentCloud(cloud);
+        editCloudWindow.show();
     }
 
     public void dellCloudButtonAction(ActionEvent actionEvent) {
+//        dellCloudConformationAlert.
         dellCloudConformationAlert
                 .showAndWait()
                 .filter(response -> response == ButtonType.OK)

@@ -26,7 +26,7 @@ public class AddCloudAccountWindowController {
     }
 
     public void addCLoudAccountButtonAction(ActionEvent actionEvent) {
-        model.addCloud(hostLabel.getText());
+        model.addFtpCloud(hostLabel.getText());
         hostLabel.setText("");
         hostLabel.getScene().getWindow().hide();
 

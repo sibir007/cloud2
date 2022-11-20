@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.stage.Stage?>
+<Stage xmlns="http://javafx.com/javafx"
+              xmlns:fx="http://javafx.com/fxml"
+              fx:controller="io.github.sibir007.cloud2.client.user.controllers.EditCloudWindowController"
+       title="Edit Cloud"
+       resizable="false"
+       fullScreen="false"
+       alwaysOnTop="true"
+       fx:id="editCloudWindow"
+
+>
+    <scene>
+        <Scene>
+            <root>
+                <VBox>
+                    <VBox>
+                        <HBox>
+                            <Label text="protocol:"/><TextField fx:id="protocolTextField" editable="false"/>
+                        </HBox>
+                        <HBox>
+                            <Label text="host:"/><TextField fx:id="hostTextField"/>
+                        </HBox>
+                        <HBox>
+                            <Label text="port:"/><TextField fx:id="portTextField" editable="false"/>
+                        </HBox>
+                        <HBox>
+                            <Label text="file:"/><TextField fx:id="fileTextField" editable="false"/>
+                        </HBox>
+<!--                        <HBox>-->
+<!--                            <Label text="port:"/>-->
+<!--                            <TextField fx:id="portTextField"/>-->
+<!--                        </HBox>-->
+<!--                        <HBox>-->
+<!--                            <Label text="protocol:"/>-->
+<!--                            <TextField fx:id="protocolTextField"/>-->
+<!--                        </HBox>-->
+                    </VBox>
+                    <HBox fx:id="controls">
+                        <!--        <VBox.vg-->
+                        <Button fx:id="addCloudButton" text="editCloud" onAction="#editCLoudButtonAction"/>
+                        <Button fx:id="chancelButton" text="chancel" onAction="#chancelButtonAction"/>
+                    </HBox>
+
+                </VBox>
+            </root>
+
+        </Scene>
+    </scene>
+
+
+
+</Stage>

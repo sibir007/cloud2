@@ -1,7 +1,8 @@
 package io.github.sibir007.cloud2.client.user.dependencyinjection;
 
-import io.github.sibir007.cloud2.client.user.controllers.AddCloudViewController;
+//import io.github.sibir007.cloud2.client.user.controllers.AddCloudViewController;
 import io.github.sibir007.cloud2.client.user.controllers.AddCloudWindowController;
+import io.github.sibir007.cloud2.client.user.controllers.EditCloudWindowController;
 import io.github.sibir007.cloud2.client.user.controllers.ManageCloudsViewController;
 //import io.github.sibir007.cloud2.client.user.controllers.ManageCloudsTableViewController;
 import io.github.sibir007.cloud2.client.user.model.Model;
@@ -65,8 +66,9 @@ public class DependencyInjection {
     static {
         addInjectionMethod(ManageCloudsViewController.class, () -> new ManageCloudsViewController(Model.getModel()));
 //        injectionMethods.put();
-        addInjectionMethod(AddCloudViewController.class, () -> new AddCloudViewController(Model.getModel()));
+//        addInjectionMethod(AddCloudViewController.class, () -> new AddCloudViewController(Model.getModel()));
         addInjectionMethod(AddCloudWindowController.class, () -> new AddCloudWindowController(Model.getModel()));
+        addInjectionMethod(EditCloudWindowController.class, () -> new EditCloudWindowController(Model.getModel()));
     }
 
 }

@@ -19,19 +19,19 @@ public class Model {
 //    }
 
     private static void initModel() throws MalformedURLException {
-        Cloud cloud = model.addCloud("yandex.ru");
+        Cloud cloud = model.addFtpCloud("yandex.ru");
         cloud.addCloudAccount("dima", "password", "dslfsfjdkfj");
         cloud.addCloudAccount("vova", "password", "eijweiwier");
         cloud.addCloudAccount("sasha", "password", "lsdjfls");
-        cloud = model.addCloud("google");
+        cloud = model.addFtpCloud("google");
         cloud.addCloudAccount("sdfsdf", "password", "232j24l");
         cloud.addCloudAccount("33333", "password", "2222222");
         cloud.addCloudAccount("1111", "password", "44545454");
-        cloud = model.addCloud("sibiriakoff2006");
+        cloud = model.addFtpCloud("sibiriakoff2006");
         cloud.addCloudAccount("^^^^^^^", "password", "sdkljf3434");
         cloud.addCloudAccount("-------", "password", "2333k3k3k3k");
         cloud.addCloudAccount("@@@@@@@", "password", "111111111");
-        cloud = model.addCloud("sibir007.io");
+        cloud = model.addFtpCloud("sibir007.io");
         cloud.addCloudAccount("0-0-0-0-0", "password", "sdjf@sjdlfk");
         cloud.addCloudAccount("1_1_1_1", "password", "dskfj@434343");
         cloud.addCloudAccount("@@@@-@@@@@", "password", "sdjflskdj6666");
